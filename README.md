@@ -1,5 +1,15 @@
 # 🐋 DSH 插件榜 · DeepSeek Harness Plugin Top 100
 
+<p align="center">
+  <a href="https://newbiefly.github.io/dsh-plugin-top100/">
+    <img src="https://img.shields.io/badge/🌐-在线访问%20Online%20Preview-4D6BFE?style=for-the-badge&logo=github&logoColor=white" alt="在线访问">
+  </a>
+</p>
+
+> ### 🌐 在线访问：**https://newbiefly.github.io/dsh-plugin-top100/**
+>
+> 榜单已部署上线，数据每日自动更新，欢迎收藏与分享～
+
 GitHub [`dsh-plugin`](https://github.com/topics/dsh-plugin) topic 下按 ⭐ 排名前 100 的插件榜单网页：
 
 - 🔍 **中文搜索**：按名称、中文简介、英文描述、作者、标签即时过滤
@@ -39,7 +49,7 @@ node test/smoke.mjs   # 截图保存在 test/shots/render.png
 
 1. 把本目录推送到一个 GitHub 仓库（如 `dsh-plugin-top100`）。
 2. 仓库 **Settings → Pages** → Source 选择 **Deploy from a branch** → 选 `main` + 根目录 `/` → Save。
-3. 首次部署成功后，访问 `https://<你的用户名>.github.io/dsh-plugin-top100/`。
+3. 首次部署成功后，访问 `https://newbiefly.github.io/dsh-plugin-top100/`（本仓库的实际线上地址）。
 4. 每日 02:00 UTC 的 Actions 会**自动抓取最新数据并提交**，页面随之更新。
 
 ## 数据管道
