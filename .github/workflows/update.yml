@@ -1,0 +1,41 @@
+name: 每日更新插件数据
+
+on:
+  schedule:
+    # 每天 02:00 UTC（北京时间 10:00）自动更新
+    - cron: "0 2 * * *"
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 抓取并生成 plugins.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 可选：配置 LLM 自动翻译新插件的英文简介（OpenAI 兼容接口）
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: node fetch.mjs
+
+      - name: 提交数据变更
+        run: |
+          git config user.name "dsh-plugin-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/plugins.json data/translations.json
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "chore: 每日更新插件数据 $(date -u +%Y-%m-%d)"
+            git push
+          fi

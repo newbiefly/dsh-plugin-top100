@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSH 插件榜 · DeepSeek Harness Plugin Top 100</title>
+<meta name="description" content="GitHub dsh-plugin topic 按 star 排名的前 100 个插件：支持中文搜索、分类筛选、一键复制安装命令，数据每日自动更新。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐋</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-flex">
+    <div class="brand">
+      <span class="logo">🐋</span>
+      <div>
+        <h1>DSH 插件榜 <span class="h1-sub">DeepSeek Harness Plugin Top 100</span></h1>
+        <p class="sub">GitHub <code>dsh-plugin</code> topic 下按 ⭐ 排名前 100 · 中文介绍 / 分类 / 一键复制安装命令 · 数据每日自动更新</p>
+      </div>
+    </div>
+    <div class="author-mini" id="author">
+      <img class="qr-mini" src="assets/qr-wechat.png" alt="作者微信二维码" width="64" height="64">
+      <div class="author-mini-info">
+        <p class="author-mini-label">👋 作者微信</p>
+        <p class="author-mini-wx"><code id="wx-id">wuzhu2</code> <button class="btn mini" id="copy-wx" title="复制微信号">📋 复制</button></p>
+        <p class="author-mini-tip">扫码或复制微信号添加</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="toolbar">
+    <div class="search-box">
+      <input id="search" type="search" placeholder="🔍 搜索名称 / 中文简介 / 英文描述 / 作者 / 标签…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="sort-box">
+      <label for="sort">排序</label>
+      <select id="sort">
+        <option value="stars-desc">⭐ 星标最多</option>
+        <option value="pushed-desc">🕐 最近更新</option>
+        <option value="name-asc">🔤 名称 A-Z</option>
+        <option value="stars-asc">⭐ 星标最少</option>
+      </select>
+    </div>
+  </section>
+
+  <nav class="chips" id="cats" aria-label="分类筛选"></nav>
+
+  <p class="stats" id="stats"></p>
+  <section class="grid" id="grid"></section>
+  <div class="empty" id="empty" hidden>
+    <p>😶 没有匹配的插件</p>
+    <p class="empty-sub">换个关键词，或清空分类筛选试试</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>数据来源：<a href="https://github.com/topics/dsh-plugin" target="_blank" rel="noopener">GitHub topic: dsh-plugin</a> · 中文介绍人工策展 + <a href="https://github.com/awesome-dsh-plugin/awesome-dsh-plugin" target="_blank" rel="noopener">awesome-dsh-plugin</a> 合并 · 由 GitHub Actions 每日自动更新</p>
+    <p class="foot-note">安装插件等于执行第三方代码，请先查看源码再安装；本站不构成任何安全背书。</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
